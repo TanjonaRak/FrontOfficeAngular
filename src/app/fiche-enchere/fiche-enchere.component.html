@@ -48,7 +48,7 @@
     </tr>
     <tr *ngFor="let Fiche of FicheVR; let i = index" class="table-{{FicheVR}}">
         <td>{{Fiche.prix}}</td>
-        <td>{{Fiche.nom}}</td>
+        <td>{{Fiche.produit}}</td>
         <td>{{Fiche.status}}</td>
         <td *ngIf="Fiche.status==enc"><button class="btn btn-warning" (click)="getOK(Fiche.id,Fiche.produit)">ReEncherir</button></td>
         <td>
@@ -65,31 +65,8 @@
     </nav>
 </table>
 
-<!-- <div style="height: 400px;">
- 
-        <div class="container">
 
-            <div class="row projects">
-                <div class="col-sm-6 item">
-                    <div class="row">
-                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" [src]=""></a></div>
-                        <div class="col">
-                            <h3 class="name">Titre : </h3>
-                            <p class="description">Body : </p>
-                            <p>Lieu : </p>
-                            <p>DATE : </p>
-                            
-                            <p>Date Debut : </p>
-                            <p>Date Limite :</p>
-                        
-                        </div>
-                    </div>
-                </div>
-                <div class="col-sm-6 item">
-                </div>
-            </div>
 
-</div> -->
 
 <p><button class="btn btn-primary" (click)="propre()">Votre Historique propre enchere</button></p>
  <p><button class="btn btn-primary" (click)="HistoriqueNorme()">Votre Historique enchere</button></p>
