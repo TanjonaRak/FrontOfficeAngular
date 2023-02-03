@@ -43,7 +43,7 @@ export class DataService {
   }
 
   Categorie(){
-    return this.httpClient.get(this.url+'Categories/');
+    return this.httpClient.get(this.url+'ProduitCategories/');
   }
 
   Recherche(prix:any,motcle:string,categorie:string,categorieid:number,dateFin:string,status:string){
