@@ -48,7 +48,7 @@
     </tr>
     <tr *ngFor="let Fiche of FicheVR; let i = index" class="table-{{FicheVR}}">
         <td>{{Fiche.prix}}</td>
-        <td>{{Fiche.produit}}</td>
+        <td>{{Fiche.nom}}</td>
         <td>{{Fiche.status}}</td>
         <td *ngIf="Fiche.status==enc"><button class="btn btn-warning" (click)="getOK(Fiche.id,Fiche.produit)">ReEncherir</button></td>
         <td>
