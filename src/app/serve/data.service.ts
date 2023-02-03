@@ -26,7 +26,7 @@ export class DataService {
   }
 
   getTEST(){
-    return this.httpClient.get(this.url+'/STR');
+    return this.httpClient.get(this.url+'STR');
   }
 
   Login(email:string,mdp:string){

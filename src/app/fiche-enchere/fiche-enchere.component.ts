@@ -97,11 +97,6 @@ export class FicheEnchereComponent implements OnInit {
     for (let n= 0; n <2; n++) {
       this.nbrSary.push(n);
     }
-    this.service.getTEST().subscribe(res=>{
-      console.log(res)
-      this.STR=res as string[]
-      /// alert(this.STR[0])
-    });
 
     this.service.Categorie().subscribe(res=>{
       this.Categorie=res
