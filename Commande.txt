@@ -1,0 +1,8 @@
+Creation component==>ng g c componentName
+
+izahay dia olona tsotra sady madio tsia tia mianatra aho fa noho ny  fanosehan I  dada sy neny dia nahavita fianarana ihany 
+
+izahay dia olona tsotra sady madio . tsia tia mianatra aho fa noho ny fanosehan i dada sy neny dia nahavita fianarana ihany 
+
+
+==> npm i g @angular\cli

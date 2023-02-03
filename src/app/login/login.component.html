@@ -1,0 +1,17 @@
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+ 
+ <p class="text-center">login client</p>
+<p>{{mess}}</p>
+<form  #forme="ngForm" (ngSubmit)="ajout(forme)">
+    <input type="text " placeholder="user " name="email" ngModel required #email="ngModel"><br><br>
+    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel"><br><br>
+    <input class="btn btn-primary" type="submit" value="connect">
+</form> 
+<p><a routerLink="/inscription">Inscrit</a></p>
+
+<p><a routerLink="/fiche">Fiche</a></p>
+
+
+

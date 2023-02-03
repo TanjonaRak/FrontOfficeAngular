@@ -1,0 +1,25 @@
+<p>historique works!</p>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<table border="1" style="background-color: cadetblue;" width="600px">
+    
+        <tr>
+            <td>Produit</td>
+            <td>Categorie</td>
+            
+            <td>Prixdebut</td>
+           
+            <td>Date</td>
+        </tr>
+        <tr *ngFor="let histo of HistoriqueVR; let i = index" class="table-{{HistoriqueVR}}">
+        <td>{{histo.nom}}</td>
+        <td>{{histo.categorieid}}</td>
+        <td>{{histo.prix}}</td>
+        <td>{{histo.dateencheriser}}</td>
+    
+    </tr>
+
+</table>

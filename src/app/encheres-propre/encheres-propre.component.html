@@ -1,0 +1,25 @@
+
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+
+<table border="1" class="table table-striped">
+    
+        <tr heigth="50px">
+            <td>Produit</td>
+            <td>Categorie</td>
+            
+            <td>Prixdebut</td>
+           
+            <td>Date</td>
+        </tr>
+        <tr *ngFor="let histo of HistoriqueVR; let i = index" class="table-{{HistoriqueVR}}" heigth="50px">
+        <td>{{histo.nom}}</td>
+        <td>{{histo.categorie}}</td>
+        <td>{{histo.prix}}</td>
+        <td>{{histo.dtSTR}}</td>
+    </tr>
+
+</table>
+<p><button class="btn btn-primary" (click)="retour()">Retour</button></p>

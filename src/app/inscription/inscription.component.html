@@ -1,0 +1,14 @@
+<p class="text-center">Inscription membre</p>
+ <h2>{{mess}}</h2>
+<form  #forme="ngForm" (ngSubmit)="inscrit(forme)">
+    <input type="text " placeholder="email" name="email" ngModel required #email="ngModel"><br><br>
+    <input type="text " placeholder="nom" name="nom" ngModel required #nom="ngModel"><br><br>
+    <input type="date" placeholder="date de naissance" name="dtn" ngModel required #dtn="ngModel"><br><br>
+    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel"><br><br>
+    <input type="password" placeholder="repass_password " name="Rpassword" ngModel required #Rpassword="ngModel"><br><br>
+    <input type="submit" value="inscrit">
+</form> 
+<p><a routerLink="/login">login</a></p>
+
+
+

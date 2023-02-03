@@ -1,0 +1,64 @@
+
+<script>
+    var app = angular.module('app', ['ngSanitize']);
+</script>
+  
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    
+</head>
+<div class="container;text-center">
+    <h1>Liste des Fiches Enchere </h1>
+  </div>
+  
+<div *ngIf="modal"></div>
+
+    <div id="modal" class="modal-header" *ngIf="modal">
+      <h3 class="modal-title">Titre du modal</h3>
+      <p>MODAL</p>
+    </div>
+
+
+  
+<div>
+    <form  #forme="ngForm" (ngSubmit)="Recherche(forme)">
+        <input style="width: 20%; float: left; margin: 0.5%;" type="text " class="form-control" placeholder="prix " name="prix" ngModel required #prix="ngModel">
+        <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="text " placeholder="motcle " name="motcle" ngModel required #motcle="ngModel">
+        <select style="width: 20%; float: left; margin: 0.5%;" class="form-control"  name="categorie" ngModel required #categorie="ngModel">
+            <option value="{{categotie.id}}" *ngFor="let categotie of CategVR;let i = index " class="table-{{CategVR}}">{{categotie.nom}}</option>
+        </select>
+        <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="datetime-local" name="datePrix" ngModel required #datePrix="ngModel" placeholder="categorieMot">
+        <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="text" name="NCategorie" ngModel required #NCategorie="ngModel">
+        <select style="width: 20%; float: left; margin: 0.5%;" class="form-control" name="status" ngModel #status="ngModel">
+            <option value="en cours">en cours</option>
+            <option value="Fin">Fin</option>
+        </select>
+        <p><input class="btn btn-primary" type="submit" value="Recherche"></p>
+    </form> 
+</div>
+
+<table class="table table-striped" border="1">
+    <tr>
+        <td>prix</td>
+        <td>Produit</td>
+        <td>status</td>
+    </tr>
+    <tr *ngFor="let Fiche of FicheVR; let i = index" class="table-{{FicheVR}}">
+        <td>{{Fiche.prix}}</td>
+        <td>{{Fiche.produit}}</td>
+        <td>{{Fiche.status}}</td>
+        <td><button class="btn btn-warning" (click)="getOK(Fiche.id,Fiche.produit)">ReEncherir</button></td>
+        <td>
+            <button type="button" class="btn btn-primary" (click)="Voir()">Voir</button>
+        </td>
+    </tr>
+    <nav>
+        <ul class="pagination">
+            <li class="page-item"><a (click)="Pagination(page2)" ><span aria-hidden="true" ><<</span></a></li>
+            <li  *ngFor="let number of numbers" class="page-item"><a  (click)="Pagination(number)" >{{number}}</a></li>
+            <li class="page-item"><a (click)="Pagination(page2)"><span aria-hidden="true">>></span></a></li>
+        </ul>
+    </nav>
+</table>
+<p><button class="btn btn-primary" (click)="propre()">Votre Historique propre enchere</button></p>
+ <p><button class="btn btn-primary" (click)="HistoriqueNorme()">Votre Historique enchere</button></p>
