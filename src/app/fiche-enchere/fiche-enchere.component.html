@@ -11,25 +11,22 @@
     <h1>Liste des Fiches Enchere </h1>
   </div>
   
-<div *ngIf="modal"></div>
-
-    <div id="modal" class="modal-header" *ngIf="modal">
-      <h3 class="modal-title">Titre du modal</h3>
-      <p>MODAL</p>
-    </div>
 
 
-  
 <div>
+   
     <form  #forme="ngForm" (ngSubmit)="Recherche(forme)">
         <input style="width: 20%; float: left; margin: 0.5%;" type="text " class="form-control" placeholder="prix " name="prix" ngModel required #prix="ngModel">
         <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="text " placeholder="motcle " name="motcle" ngModel required #motcle="ngModel">
-        <select style="width: 20%; float: left; margin: 0.5%;" class="form-control"  name="categorie" ngModel required #categorie="ngModel">
+    
+        <select style="width: 20%; float: left; margin: 0.5%;" class="form-control"  name="categorie"  ngModel required #categorie="ngModel">
+            <option value="" disabled selected>Categorie</option>
             <option value="{{categotie.id}}" *ngFor="let categotie of CategVR;let i = index " class="table-{{CategVR}}">{{categotie.nom}}</option>
         </select>
         <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="datetime-local" name="datePrix" ngModel required #datePrix="ngModel" placeholder="categorieMot">
-        <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" type="text" name="NCategorie" ngModel required #NCategorie="ngModel">
+        <input style="width: 20%; float: left; margin: 0.5%;" class="form-control" value="" type="hidden" name="NCategorie" ngModel required #NCategorie="ngModel">
         <select style="width: 20%; float: left; margin: 0.5%;" class="form-control" name="status" ngModel #status="ngModel">
+            <option value="" disabled selected>Status</option>
             <option value="en cours">en cours</option>
             <option value="Fin">Fin</option>
         </select>
@@ -37,7 +34,13 @@
     </form> 
 </div>
 
-<table class="table table-striped" border="1">
+<div *ngIf="modal">
+    <p *ngFor="let img of imageVR;let i = index">
+        <img [src]="getImage(img.sary)" width="120px" heigth="90px">
+    </p>
+    <button (click)="close()" class="btn btn-danger">X</button>
+</div>
+<table class="table table-striped" border="1" >
     <tr>
         <td>prix</td>
         <td>Produit</td>
@@ -49,8 +52,9 @@
         <td>{{Fiche.status}}</td>
         <td><button class="btn btn-warning" (click)="getOK(Fiche.id,Fiche.produit)">ReEncherir</button></td>
         <td>
-            <button type="button" class="btn btn-primary" (click)="Voir()">Voir</button>
+            <button type="button" class="btn btn-primary" (click)="Voir(Fiche.id)">Voir Photo</button>
         </td>
+
     </tr>
     <nav>
         <ul class="pagination">
@@ -60,5 +64,33 @@
         </ul>
     </nav>
 </table>
+
+<!-- <div style="height: 400px;">
+ 
+        <div class="container">
+
+            <div class="row projects">
+                <div class="col-sm-6 item">
+                    <div class="row">
+                        <div class="col-md-12 col-lg-5"><a href="#"><img class="img-fluid" [src]=""></a></div>
+                        <div class="col">
+                            <h3 class="name">Titre : </h3>
+                            <p class="description">Body : </p>
+                            <p>Lieu : </p>
+                            <p>DATE : </p>
+                            
+                            <p>Date Debut : </p>
+                            <p>Date Limite :</p>
+                        
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 item">
+                </div>
+            </div>
+
+</div> -->
+
 <p><button class="btn btn-primary" (click)="propre()">Votre Historique propre enchere</button></p>
  <p><button class="btn btn-primary" (click)="HistoriqueNorme()">Votre Historique enchere</button></p>
+

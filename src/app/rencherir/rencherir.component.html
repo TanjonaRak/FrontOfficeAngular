@@ -2,11 +2,21 @@
 <head>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 </head>
+
+<div class="col-md-offset-4 col-md-4">
+    <div *ngIf="result">
+        <p> Montant : {{EtatENCHERIR.solde}}</p>
+        <p> MontantBlocked : {{EtatENCHERIR.soldeBlocked}} </p>
+        <p> MontantUnblocked : {{EtatENCHERIR.soldeUnBlocked }}</p>
+        <p> Situation : {{EtatENCHERIR.situation}}</p>
+    </div>
 <h1>Encherir</h1>
 <form  #forme="ngForm" (ngSubmit)="ReEncherir(forme)">
     <p class="text-center"></p>
-    <p><input  style="width: 10%;" class="form-control" type="text" placeholder="montant" name="montant" ngModel required #montant="ngModel"><br><br></p>
-   <p><input type="submit" value="Encherir" class="btn btn-primary" ></p>
+    <p><input  class="form-control" class="form-control" type="text" placeholder="montant" name="montant" ngModel required #montant="ngModel"><br><br></p>
+   <p><input class="form-control" type="submit" value="Encherir" class="btn btn-primary" ></p>
 </form> 
 <p><button class="btn btn-warning" (click)="Retour()">Retour</button></p>
+</div>
+
 

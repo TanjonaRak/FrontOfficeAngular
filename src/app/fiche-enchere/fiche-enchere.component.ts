@@ -4,6 +4,8 @@ import { FicheEnchere } from '../model/FicheEnchere';
 import { DataService } from '../serve/data.service';
 import { LoginComponent } from '../login/login.component';
 import { NgForm } from '@angular/forms';
+import { DomSanitizer } from '@angular/platform-browser';
+import { Photo } from '../model/Photo';
 
 
 @Component({
@@ -27,10 +29,19 @@ export class FicheEnchereComponent implements OnInit {
   page1:number=0;
   page2:number=0
   modal:boolean=false
+  image:any
+  imageVR : any
+  imageBypass: string[]=[]
+  Photo :Photo[]=[]
+
+  constructor(private service:DataService,private sanitizer: DomSanitizer) { }
 
 
-  constructor(private service:DataService) { }
-
+  Image={
+    id:0,
+    sary:'',
+    idproduit:0
+  }as Photo
 
 
  getOK(id:number,produit:string){
@@ -97,10 +108,7 @@ export class FicheEnchereComponent implements OnInit {
       this.CategVR=this.Categorie[0]['data'] 
       console.log(this.CategVR)
     });
-   /// alert(this.STR)
 
-    
-      ///coRensole.log("DATA FICHE====>"+this.FicheEnchereTab+"FINNNN")
   }
 
   Recherche(forme : NgForm){
@@ -137,20 +145,29 @@ export class FicheEnchereComponent implements OnInit {
       this.page=id
       this.page1=id-1
       this.page2=id+1
-    
     })
    
   }
-
-  
-
   HistoriqueNorme(){
     window.location.href = 'historiqueNorme';
   }
-  Voir(){
-    if(this.modal==false){
+  Voir(id:string){
+    ///var id="1"
       this.modal=true
-    }else{this.modal=false}
-    
+    this.service.getPhoto(id).subscribe(res=>{
+      this.image=res
+      this.imageVR=this.image[0]['data'];
+      console.log(this.imageVR)
+      
+    })
   }
+
+  getImage(img:any) {
+    return this.sanitizer.bypassSecurityTrustResourceUrl(img);
+  }
+  
+  close(){
+    this.modal=false
+  }
+
 }

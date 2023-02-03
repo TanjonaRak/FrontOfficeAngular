@@ -1,0 +1,18 @@
+# redirect all requests to index.html
+/* /index.html 200
+
+# redirect specific URL
+/fiche /login  
+/login /fiche
+/fiche /encherir
+/inscription /login
+/fiche /historique
+/historique /fiche
+/fiche /historiquePropre
+/historiquePropre /fiche
+/historiqueNorme /fiche
+/fiche /historiqueNorme
+/encherir /fiche
+
+# redirect to another domain
+/redirect-page https://exquisite-marigold-63df7f.netlify.app/fiche 302

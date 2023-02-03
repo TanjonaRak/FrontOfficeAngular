@@ -20,13 +20,16 @@ export class EncheresNormesComponent implements OnInit {
     utilisateur:""
   }
 
-  ngOnInit(): void {
 
-    
+  retour(){
+    window.location.href = '/fiche';
+  }
+
+  ngOnInit(): void {
     var iduser=sessionStorage.getItem('utilisateur');
     if(iduser!=null){
-      this.Log=JSON.parse(iduser);
-      this.service.HistoriqueNorme(this.Log.utilisateur).subscribe((res)=>{
+        this.Log=JSON.parse(iduser);
+        this.service.HistoriqueNorme(this.Log.utilisateur).subscribe((res)=>{
         this.Historique=res
         this.HistoriqueVR=this.Historique[0]['data']
         console.log(this.HistoriqueVR)
@@ -36,7 +39,5 @@ export class EncheresNormesComponent implements OnInit {
     }
     
   }
-  retour(){
-    window.location.href = '/fiche';
-  }
+  
 }

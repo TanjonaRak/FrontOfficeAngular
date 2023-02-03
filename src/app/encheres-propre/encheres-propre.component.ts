@@ -36,10 +36,8 @@ export class EncheresPropreComponent implements OnInit {
       });
     }else{
       window.location.href = '/login';
-    }
-    
+    } 
   }
-
   retour(){
     window.location.href = '/fiche';
   }

@@ -27,6 +27,7 @@ export class RencherirComponent implements OnInit {
     situation:""
   }
   ENCHER:any
+  result:boolean=false
   
   constructor(private service: DataService) { }
 
@@ -48,7 +49,8 @@ export class RencherirComponent implements OnInit {
        this.EtatENCHERIR=this.ENCHER[0]['data'][0]
         console.log(this.ENCHER[0]['data'][0])
         localStorage.removeItem("produit")
-        alert("solde : "+this.EtatENCHERIR.solde +"SoldeBlocked : "+this.EtatENCHERIR.soldeBlocked+" soldeUnBlocked : "+this.EtatENCHERIR.soldeUnBlocked+"Situation:"+this.EtatENCHERIR.situation);
+        ////alert("solde : "+this.EtatENCHERIR.solde +"SoldeBlocked : "+this.EtatENCHERIR.soldeBlocked+" soldeUnBlocked : "+this.EtatENCHERIR.soldeUnBlocked+"Situation: "+this.EtatENCHERIR.situation);
+        this.result=true
       });
     }
   }

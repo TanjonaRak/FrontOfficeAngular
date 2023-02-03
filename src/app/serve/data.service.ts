@@ -9,7 +9,7 @@ import { membres } from '../model/membres';
 })
 export class DataService {
 
-  url:string="http://localhost:9000/"
+  url:string="https://enchere-production-17e0.up.railway.app/"
   constructor(private httpClient:HttpClient) { }
 
    /*load(){$http.defaults.useXDomain = true;

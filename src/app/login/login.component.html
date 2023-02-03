@@ -4,14 +4,17 @@
  
  <p class="text-center">login client</p>
 <p>{{mess}}</p>
+<div class="col-md-offset-4 col-md-4">
 <form  #forme="ngForm" (ngSubmit)="ajout(forme)">
-    <input type="text " placeholder="user " name="email" ngModel required #email="ngModel"><br><br>
-    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel"><br><br>
-    <input class="btn btn-primary" type="submit" value="connect">
+    <input type="text " placeholder="user " name="email" ngModel required #email="ngModel" class="form-control" value="jean@gmail.com"><br><br>
+    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel"class="form-control" value="jean"><br><br>
+    <input class="btn btn-primary" type="submit" value="connect"class="form-control">
 </form> 
-<p><a routerLink="/inscription">Inscrit</a></p>
+<p class="text-center"><a routerLink="/inscription">Inscrit<hr/></a></p>
 
-<p><a routerLink="/fiche">Fiche</a></p>
+<p class="text-center"><a routerLink="/fiche"><button class="btn btn-primary">Fiche Enchere</button></a></p>
+</div>
+
 
 
 

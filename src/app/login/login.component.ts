@@ -50,8 +50,6 @@ export class LoginComponent implements OnInit {
           }else{
             window.location.href = '/fiche';
           }
-          
-         
         }
         // alert(this.mess);
       });

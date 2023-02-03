@@ -1,14 +1,19 @@
 <p class="text-center">Inscription membre</p>
- <h2>{{mess}}</h2>
+ 
+ <div  class="col-md-offset-4 col-md-4">
+    <h2>{{mess}}</h2>
 <form  #forme="ngForm" (ngSubmit)="inscrit(forme)">
-    <input type="text " placeholder="email" name="email" ngModel required #email="ngModel"><br><br>
-    <input type="text " placeholder="nom" name="nom" ngModel required #nom="ngModel"><br><br>
-    <input type="date" placeholder="date de naissance" name="dtn" ngModel required #dtn="ngModel"><br><br>
-    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel"><br><br>
-    <input type="password" placeholder="repass_password " name="Rpassword" ngModel required #Rpassword="ngModel"><br><br>
-    <input type="submit" value="inscrit">
+    <input type="text " placeholder="email" name="email" ngModel required #email="ngModel" class="form-control"><br><br>
+    <input type="text " placeholder="nom" name="nom" ngModel required #nom="ngModel" class="form-control"><br><br>
+    <input type="date" placeholder="date de naissance" name="dtn" ngModel required #dtn="ngModel" class="form-control"><br><br>
+    <input type="password" placeholder="password " name="password" ngModel required #password="ngModel" class="form-control"><br><br>
+    <input type="password" placeholder="repass_password " name="Rpassword" ngModel required #Rpassword="ngModel" class="form-control"><br><br>
+    <input type="submit" value="inscrit" class="form-control" >
 </form> 
-<p><a routerLink="/login">login</a></p>
+<hr/>
+<p class="text-center"><a routerLink="/login">login</a></p>
+</div> 
+
 
 
 
